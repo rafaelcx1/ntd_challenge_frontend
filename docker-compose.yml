@@ -1,0 +1,15 @@
+name: ntd_challenge
+
+services:
+  ui:
+    build: .
+
+    networks:
+      - ntd-network
+
+    ports:
+      - 7000:7000
+
+networks:
+  ntd-network:
+    driver: bridge

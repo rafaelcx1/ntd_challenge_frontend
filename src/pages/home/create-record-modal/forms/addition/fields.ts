@@ -1,0 +1,22 @@
+import { FormikSharedConfig } from "formik";
+import { TextFieldProps } from "@mui/material";
+import { defaultField } from "../../../../../utils/field.util";
+
+type AdditionFields = {
+    value1: TextFieldProps;
+    value2: TextFieldProps;
+};
+
+export const getAdditionFields = (formik: FormikSharedConfig): AdditionFields => ({
+    value1: {
+        ...defaultField(formik, "addition.value1"),
+        label: "First value",
+        placeholder: "1",
+    },
+
+    value2: {
+        ...defaultField(formik, "addition.value2"),
+        label: "Second value",
+        placeholder: "2"
+    }
+})
