@@ -1,14 +1,13 @@
 
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Box, IconButton } from "@mui/material";
-import { DataGrid, GridCallbackDetails, GridColDef, GridFilterModel, GridPaginationModel, GridRenderCellParams, GridSortModel, GridToolbarQuickFilter, GridTreeNodeWithRender } from "@mui/x-data-grid";
-import { keepPreviousData, useQuery, useQueryClient } from "@tanstack/react-query";
+import { DataGrid, GridCallbackDetails, GridColDef, GridFilterModel, GridPaginationModel, GridSortModel, GridToolbarQuickFilter } from "@mui/x-data-grid";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { getAllOperations } from "../../../services/operations/operations-service";
-import { deleteRecord, getRecords } from "../../../services/records/records-service";
+import { getRecords } from "../../../services/records/records-service";
 import { Record } from "../../../services/records/records-types";
 import { formatDate } from "../../../utils/date.util";
-import { handleApi } from '../../../utils/api-handler.util';
 
 const QuickSearchToolbar = () => {
     return (
