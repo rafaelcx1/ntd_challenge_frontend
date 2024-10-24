@@ -4,7 +4,9 @@ COPY package.json /app/
 RUN npm config set legacy-peer-deps true
 RUN npm install --force
 COPY ./ /app/
+RUN npm run test
 RUN npm run build:dev
+
 
 FROM nginx:1.21.0-alpine
 EXPOSE 7000

@@ -1,6 +1,6 @@
+import { useQuery } from '@tanstack/react-query';
 import { render, screen } from '@testing-library/react';
 import { describe, it } from 'vitest';
-import { useQuery } from '@tanstack/react-query';
 import { RecordsTable } from './records-table';
 
 vi.mock('@tanstack/react-query', () => ({
@@ -18,7 +18,7 @@ describe('RecordsTable', () => {
             isLoading: false,
         } as any);
 
-        render(<RecordsTable />);
+        render(<RecordsTable onDeleteRecord={vi.fn()} />);
 
         expect(screen.getByRole('grid')).toBeInTheDocument();
         expect(screen.getByText('ID')).toBeInTheDocument();

@@ -1,8 +1,7 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import { describe, it, expect, vi } from 'vitest';
 import { useQuery } from '@tanstack/react-query';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { describe, expect, it, vi } from 'vitest';
 import { CreateRecordModal } from './create-record-modal';
-import { OperationType } from './enums/operation-type.enum';
 
 vi.mock('../../../services/operations/operations-service', () => ({
     getAllOperations: vi.fn(),

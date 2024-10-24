@@ -1,4 +1,4 @@
-name: ntd_challenge
+name: ntd_test
 
 services:
   ui:
