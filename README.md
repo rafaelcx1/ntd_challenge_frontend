@@ -1,50 +1,75 @@
-# React + TypeScript + Vite
+# NTD Software Test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains a frontend application developed as a test for NTD Software. The frontend exposes a UI for an arithmetic calculator with a user balance control.
 
-Currently, two official plugins are available:
+# Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- <b>Docker</b>: Ensure Docker is installed on your machine.
 
-## Expanding the ESLint configuration
+# Instructions
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+To set up and run the application, follow these steps:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1) Clone this repository to your local machine:
+```
+git clone https://github.com/rafaelcx1/ntd_challenge_frontend.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2) Navigate to the project directory:
+```
+cd <project-directory>
+```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+3) Run the application using Docker Compose:
+```
+docker compose up --build -d
+```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+The application should now be up and running at this URL:
+```
+http://localhost:7000
+```
+
+<b>Important: The backend must be running for the frontend to function properly.</b>
+
+# Solution Overview
+Technology Stack:
+
+- <b>React</b>: Main frontend language.
+- <b>Nginx</b>: As the reverse proxy for the application.
+- <b>Vitest</b>: As the test library for the application.
+- <b>MUI</b>: As the main component library based on material design.
+- <b>Formik</b>: As the forms management library.
+- <b>Yup</b>: As a validation library.
+
+All communication with the backend is handled through the API gateway at http://localhost:9000.
+
+# Tests
+The application has unit tests to validate the features.
+
+# Pre-Configured Users
+The application comes with three pre-configured users, each starting with a balance of $100.00:
+```
+User 1:
+Email: user1@user1.com
+Password: User1@123
+
+User 2:
+Email: user2@user2.com
+Password: User2@123
+
+User 3:
+Email: user3@user3.com
+Password: User3@123
+```
+
+# Operation Costs
+The costs for each operation are pre-configured as follows:
+```
+Add: $1.00
+Subtract: $1.00
+Multiply: $3.00
+Divide: $3.00
+Square Root: $3.00
+Random String: $5.00
 ```
