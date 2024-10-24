@@ -13,4 +13,5 @@ export const squareRootValidationSchema = yup.object({
   value: yup
     .number()
     .required("Value is required")
+    .typeError("Only numeric values are allowed"),
 });

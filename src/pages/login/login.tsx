@@ -13,6 +13,7 @@ import { authenticate } from '../../services/auth/auth-service';
 import { handleApi } from '../../utils/api-handler.util';
 import { getLoginFields } from './helpers/fields';
 import { LoginFormProps, loginInitialValues, loginValidationSchema } from './helpers/validation';
+import Logo from "../../assets/ntd-logo-hr.png"
 
 
 export const Login: React.FC = () => {
@@ -42,7 +43,10 @@ export const Login: React.FC = () => {
     const fields = getLoginFields(formik)
 
     return (
-        <Container component="main" maxWidth="xs">
+        <Container component="main" maxWidth="xs" sx={{ display: 'grid', gap: '40px', justifyItems: 'center', alignContent: "center", height: "100vh" }}>
+
+            <img src={Logo} alt="NTD Software logo" width={300} />
+
             <Paper elevation={3} sx={{ padding: 4 }}>
                 <Typography variant="h5" align="center">
                     Login

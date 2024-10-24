@@ -106,7 +106,7 @@ export const CreateRecordModal: React.FC<CreateRecordModalProps> = ({ open, onCl
                             <em>None</em>
                         </MenuItem>
                         {operationsQuery.data?.map(operation => (
-                            <MenuItem key={operation.id} value={operation.type}>{operation.type + ` (Cost: $ ${operation.cost.toFixed(2)})`}</MenuItem>
+                            <MenuItem key={operation.id} value={operation.type}>{operation.type?.replace("_", " ") + ` (Cost: $ ${operation.cost.toFixed(2)})`}</MenuItem>
                         ))}
                     </Select>
                 </FormControl>

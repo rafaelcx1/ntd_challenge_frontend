@@ -59,14 +59,14 @@ export const RecordsTable: React.FC<RecordsTableProps> = (props) => {
         {
             field: 'operationId',
             headerName: 'Operation',
-            width: 150,
+            width: 140,
             sortable: true,
             valueFormatter: (value: number) => operationsQuery.data?.find(v => v.id === value)?.type,
         },
         {
             field: 'amount',
             headerName: 'Amount',
-            width: 150,
+            width: 140,
             type: 'number',
             sortable: true,
             valueFormatter: (value) => `$${(value as number).toFixed(2)}`
@@ -74,7 +74,7 @@ export const RecordsTable: React.FC<RecordsTableProps> = (props) => {
         {
             field: 'userBalance',
             headerName: 'User Balance',
-            width: 150,
+            width: 140,
             type: 'number',
             sortable: true,
             valueFormatter: (value) => `$${(value as number).toFixed(2)}`

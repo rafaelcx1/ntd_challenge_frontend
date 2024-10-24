@@ -14,9 +14,11 @@ export const multiplicationInitialValues: MultiplicationFormProps = {
 export const multiplicationValidationSchema = yup.object({
   value1: yup
     .number()
-    .required("First value is required"),
+    .required("First value is required")
+    .typeError("Only numeric values are allowed"),
 
   value2: yup
     .number()
-    .required("Second value is required"),
+    .required("Second value is required")
+    .typeError("Only numeric values are allowed"),
 });

@@ -13,4 +13,5 @@ export const randomStringValidationSchema = yup.object({
   size: yup
     .number()
     .required("Size is required")
+    .typeError("Only numeric values are allowed"),
 });

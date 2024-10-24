@@ -52,13 +52,13 @@ export const Home: React.FC = () => {
         <Container component="main" sx={{ marginTop: "40px" }}>
             <Card>
                 <CardContent>
-                    <Box display="flex" justifyContent="space-between" mb={2}>
+                    <Box display="flex" justifyContent="space-between" >
                         <Typography variant="h3">Records</Typography>
                         <Button variant="contained" color="primary" startIcon={<AddIcon />} onClick={() => setOpenCreateRecordModal(true)}>
                             Create Operation
                         </Button>
                     </Box>
-                    <Box style={{ width: '100%', padding: "20px 10px" }}>
+                    <Box style={{ width: '100%', marginTop: "40px" }}>
                         <RecordsTable onDeleteRecord={onDeleteRecord} />
                     </Box>
                 </CardContent>

@@ -26,36 +26,36 @@ const renderFields = (operationType: OperationType, formik: FormikSharedConfig) 
         case OperationType.ADDITION:
             const additionFields = getAdditionFields(formik);
             return (
-                <Box sx={{ mt: 2 }}>
+                <Box sx={{ mt: 2, display: "flex", gap: "10px" }}>
                     <TextField {...additionFields.value1} fullWidth />
-                    <TextField {...additionFields.value2} fullWidth sx={{ mt: 2 }} />
+                    <TextField {...additionFields.value2} fullWidth />
                 </Box>
             );
 
         case OperationType.SUBTRACTION:
             const subtractionFields = getSubtractionFields(formik);
             return (
-                <Box sx={{ mt: 2 }}>
+                <Box sx={{ mt: 2, display: "flex", gap: "10px" }}>
                     <TextField {...subtractionFields.value1} fullWidth />
-                    <TextField {...subtractionFields.value2} fullWidth sx={{ mt: 2 }} />
+                    <TextField {...subtractionFields.value2} fullWidth />
                 </Box>
             );
 
         case OperationType.MULTIPLICATION:
             const multiplicationFields = getMultiplicationFields(formik);
             return (
-                <Box sx={{ mt: 2 }}>
+                <Box sx={{ mt: 2, display: "flex", gap: "10px" }}>
                     <TextField {...multiplicationFields.value1} fullWidth />
-                    <TextField {...multiplicationFields.value2} fullWidth sx={{ mt: 2 }} />
+                    <TextField {...multiplicationFields.value2} fullWidth />
                 </Box>
             );
 
         case OperationType.DIVISION:
             const divisionFields = getDivisionFields(formik);
             return (
-                <Box sx={{ mt: 2 }}>
+                <Box sx={{ mt: 2, display: "flex", gap: "10px" }}>
                     <TextField {...divisionFields.value1} fullWidth />
-                    <TextField {...divisionFields.value2} fullWidth sx={{ mt: 2 }} />
+                    <TextField {...divisionFields.value2} fullWidth />
                 </Box>
             );
 
