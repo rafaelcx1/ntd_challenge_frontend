@@ -28,8 +28,6 @@ interface RecordsTableProps {
 }
 
 export const RecordsTable: React.FC<RecordsTableProps> = (props) => {
-    const queryClient = useQueryClient()
-
     const [filter, setFilter] = useState<string>('')
     const [sort, setSort] = useState<GridSortModel>([{ field: 'id', sort: 'desc' }])
     const [paginationModel, setPaginationModel] = useState<GridPaginationModel>({
